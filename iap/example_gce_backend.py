@@ -35,7 +35,7 @@ def root():
     if error_str:
         return 'Error: {}'.format(error_str)
     else:
-        return 'Hi, {}. I am {}.'.format(user_email, platform.node())
+        return 'Hi, {}. I am {}. token is {}. headers is {}'.format(user_email, platform.node(), flask.request.headers.get('x-goog-iap-jwt-assertion'), flask.request.headers)
 
 
 if __name__ == '__main__':
